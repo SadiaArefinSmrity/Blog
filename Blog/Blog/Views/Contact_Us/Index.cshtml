@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="~/Style/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Style/contact.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Bloggersnest</title>
+</head>
+<body style="background-image: url('Style/images/Contact.jpg')">
+    <div>
+        <div class="header">
+
+            <div class="container">
+                <h1 class="header_name">Bloggers' Nest!</h1>
+               
+                <a href="logout.php"> <button class="header_login_button">  </button> </a>
+
+                <a href="private_page.php"> <button class="header_login_button"> <?php echo $_SESSION['username'];?> </button> </a>
+
+                <a href="login_page.php"><button class="header_login_button">Login/Register</button> </a>
+
+            </div>
+
+            <div class="menu-icon">
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <ul class="menu">
+                <li><a href="/Home/Index ">Home</a></li>
+                <li><a href="/Write/Index ">Write</a></li>
+                <li><a href="/Read/Index ">Read</a></li>
+                <li><a href=" " onclick="return false;" id="cat">Categories</a></li>
+                <li><a href="/Read/Index " class="subcat" style="display:none; margin-left:25px">-National</a></li>
+                <li><a href="/Read/Index " class="subcat" style="display:none; margin-left:25px">-International</a></li>
+                <li><a href=" /Contact_Us/Index">Contact us!</a></li>
+            </ul>
+        </div>
+
+        <div class="container-fluid " id="backgrnd">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2><i>Contact Us</i></h2>
+                    <p>Email : bloggersnest@gmail.com</p>
+                    <p>Moblie : +8801731513519</p>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2><i>Tell Us Something...</i></h2>
+                    <form class="form-container" method="POST">
+                        <div class="form-group">
+                            <label for="ConName">Name</label>
+                            <i><input type="text" class="form-control" name="con_name" placeholder="Enter Your Full Name"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="ConEmail">Email Address</label>
+                            <i><input type="text" class="form-control" name="con_mail" placeholder="Enter Your Email Address"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="ConContact">Contact Number</label>
+                            <i><input type="text" class="form-control" name="con_contact" placeholder="Enter Contact Number"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="ConText">Your Opinion</label>
+                            <i><textarea class="form-control" name="text" placeholder="Your valuable suggestions....."></textarea></i>
+                        </div>
+
+                        <button type="submit" class="btn btn-success btn-block" name="reg_submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom">
+            <h6>&copy; 2019 AUST CSE 3.2, ALL RIGHTS RESERVED </h6>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+	on=false;
+	subCatOn=false;
+	$(".sidebar").hide();
+	$(".menu-icon").click(function(){
+		if(on==true)
+		{
+			$(".sidebar").hide();
+			$(".subcat").hide();
+			on=false;
+			subCatOn=false;
+		}
+		else{
+			$(".sidebar").show();
+			on=true;
+		}
+
+	});
+	$("#cat").click(function(){
+		if(subCatOn==true)
+		{
+			$(".subcat").hide();
+			subCatOn=false;
+		}
+		else{
+			$(".subcat").show();
+			subCatOn=true;
+		}
+	});
+});
+</script>

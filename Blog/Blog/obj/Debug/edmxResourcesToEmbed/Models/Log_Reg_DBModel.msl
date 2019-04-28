@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_BlogModelStoreContainer" CdmEntityContainer="DBmodels">
+    <EntitySetMapping Name="t_users">
+      <EntityTypeMapping TypeName="DB_BlogModel.t_users">
+        <MappingFragment StoreEntitySet="t_users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+          <ScalarProperty Name="user_lname" ColumnName="user_lname" />
+          <ScalarProperty Name="user_username" ColumnName="user_username" />
+          <ScalarProperty Name="user_pass" ColumnName="user_pass" />
+          <ScalarProperty Name="user_contact" ColumnName="user_contact" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

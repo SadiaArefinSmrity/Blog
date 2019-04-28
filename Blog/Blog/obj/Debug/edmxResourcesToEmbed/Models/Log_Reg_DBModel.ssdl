@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_BlogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_fname" Type="varchar" MaxLength="100" />
+    <Property Name="user_lname" Type="varchar" MaxLength="100" />
+    <Property Name="user_username" Type="varchar" MaxLength="100" />
+    <Property Name="user_pass" Type="varchar" MaxLength="100" />
+    <Property Name="user_contact" Type="varchar" MaxLength="100" />
+    <Property Name="is_admin" Type="int" />
+  </EntityType>
+  <EntityContainer Name="DB_BlogModelStoreContainer">
+    <EntitySet Name="t_users" EntityType="Self.t_users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
